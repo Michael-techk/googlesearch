@@ -1,5 +1,4 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: arial, sans-serif; 
@@ -8,17 +7,17 @@ body{
     background: #fff;
     color:#202124;
 }
-
+/*siatka strony*/
 section{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
     box-sizing: border-box;
     min-height: 100vh;
     justify-content: center;
 }
-.nav-top{
+nav{
     grid-column: 1/5;
-    grid-row: 1;
     display: flex;
     justify-content: flex-end;
     top: 0;
@@ -62,50 +61,78 @@ section{
     outline: none;
     padding: 6px 14px ;
     color: white;
+    border-radius: 2px;
 }
 
 .nav-links > button:hover{
     background: rgb(27, 94, 182);
 }
-
-main {
-    align-items: center;
-    width: 100%;
-}
-
+/*image*/
 .image-wrap{
-    grid-column: 2/3;
+    grid-column: 2/4;
     grid-row: 2;
-    justify-items: center;
-    width: 100%;
+    display: flex;
+    width: 100%;  
+    align-items: center;
+    justify-content: center;
 }
 .image-wrap img{
     height: 100%;
     max-height: 92px;
-    place-self: center;
-
+    bottom: 0;
 }
-
-form{
+/*search bar with buttons and language*/
+main{
     grid-row: 3/4;
+    grid-column: 2/4;
     width: 100%;
-    justify-content: center;
 }
 
-.form-buttons{
-
-}
 
 .searchBar{
     padding-top: 6px;
-    width: auto;
-    max-width: 584px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid gray;
+    box-shadow: 1px;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
+
+.searchBar:hover{
+    box-shadow: gray 1px;
+}
+
+.searchText{
+    top: 0;
+    width: 100%;
+    padding-bottom: 4px;
+    border: none;
+    outline: none;
+}
+
+.icon{
+    padding: 2px 10px;
+}
+
+
+.form-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
 
 .lang{
     grid-row: 4;
 }
 
-footer{
+.footers{
+    grid-column: 1/5;
     grid-row: 5;
+    display: inline-block;
 }
+
+
